@@ -20,10 +20,19 @@
  When I count the money
  Then my total is Rs 130
 
- Given Rs 20, 50, 10, 20, 13, 500 notes
+ Given Rs 20, 50, 10, 20, 13 notes
  When I count the money
  Then my total is Rs 100
 
 */
 
-// Write your JavaScript here
+function countMoney(listOfRupees) {
+    changeElementText("#listOfRupees", listOfRupees);
+    var total = 0;
+
+    $.each(listOfRupees, function() {
+       total += this;
+    });
+
+    changeElementText("#total", total);
+}
