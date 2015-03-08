@@ -27,12 +27,21 @@
 */
 
 function countMoney(listOfRupees) {
-    changeElementText("#listOfRupees", listOfRupees);
+
+    var formattedListOfRupees = [];
+
     var total = 0;
 
-    $.each(listOfRupees, function() {
-       total += this;
-    });
+    for (var i = 0; i < listOfRupees.length; i++ ) {
+        total += listOfRupees[i];
+        formattedListOfRupees.push(" " + listOfRupees[i]);
+    }
 
+    //$.each(listOfRupees, function() {
+    //   total += this;
+    //    formattedListOfRupees += this + " ";
+    //});
+
+    changeElementText("#listOfRupees", formattedListOfRupees.toString());
     changeElementText("#total", total);
 }

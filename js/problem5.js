@@ -33,4 +33,15 @@
      count: 7
  */
 
-// Write your JavaScript here
+function editAdvertisement(advertisingText) {
+    changeElementText("#advertisingText", advertisingText);
+    var newText = advertisingText;
+    newText[1] = newText[1].reverse();
+
+
+
+    var count = 0;
+
+    changeElementText("#newText", newText);
+    changeElementText("#count", count);
+}
