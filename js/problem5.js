@@ -34,30 +34,25 @@
  */
 
 function editAdvertisement(advertisingText) {
-    var oldText = "";
 
+    var advertisingText1 = advertisingText[0].join(" ");
+    var advertisingText2 = advertisingText[1].join(" ");
+    var advertisingText3 = advertisingText[2].join(" ");
+
+    changeElementText("#advertisingText1", advertisingText1);
+    changeElementText("#advertisingText2", advertisingText2);
+    changeElementText("#advertisingText3", advertisingText3);
+
+    var newAdvertisingText2 = advertisingText[1].reverse().join(" ");
+
+    var count = 0;
     for (var line = 0; line < advertisingText.length; line++) {
         for (var word = 0; word < advertisingText[line].length; word++) {
-            oldText += advertisingText[line][word] + " ";
-        }
-        oldText += "\n\r";
-    }
-
-    changeElementText("#advertisingText", oldText);
-
-    var editedText = advertisingText;
-    editedText[1] = editedText[1].reverse();
-    var count = 0;
-
-    var newText = "";
-    for (var line = 0; line < editedText.length; line++) {
-        for (var word = 0; word < editedText[line].length; word++) {
-            newText += editedText[line][word] + " ";
             count++;
         }
-        newText += "\n\r";
     }
-
-    changeElementText("#newText", newText);
+    changeElementText("#newAdvertisingText1", advertisingText1);
+    changeElementText("#newAdvertisingText2", newAdvertisingText2);
+    changeElementText("#newAdvertisingText3", advertisingText3);
     changeElementText("#count", count);
 }
