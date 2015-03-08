@@ -28,20 +28,12 @@
 
 function countMoney(listOfRupees) {
 
-    var formattedListOfRupees = [];
-
     var total = 0;
 
     for (var i = 0; i < listOfRupees.length; i++ ) {
         total += listOfRupees[i];
-        formattedListOfRupees.push(" " + listOfRupees[i]);
     }
 
-    //$.each(listOfRupees, function() {
-    //   total += this;
-    //    formattedListOfRupees += this + " ";
-    //});
-
-    changeElementText("#listOfRupees", formattedListOfRupees.toString());
+    changeElementText("#listOfRupees", listOfRupees.join(", "));
     changeElementText("#total", total);
 }
